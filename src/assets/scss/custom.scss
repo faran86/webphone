@@ -101,6 +101,18 @@ $font-family-sans-serif: 'Montserrat' , Roboto, "Helvetica Neue", Arial, "Noto S
 $font-family-sans-alternative: 'Nunito', Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
 $font-family-base: $font-family-sans-serif;
 
+$h2-font-size:                22px;
+
+$headings-font-family:        $font-family-sans-alternative;
+$headings-font-weight:        600;
+
+//Nav
+$nav-tabs-border-color:             transparent;
+$nav-tabs-link-hover-border-color:  $nav-tabs-border-color $nav-tabs-border-color $nav-tabs-border-color;
+$nav-tabs-link-active-color:        $white;
+$nav-tabs-link-active-bg:           $primary;
+$nav-tabs-link-active-border-color: $nav-tabs-link-active-bg $nav-tabs-link-active-bg $nav-tabs-link-active-bg;
+
 // Transition
 $transition-duration: 0.5s;
 
@@ -127,15 +139,16 @@ a{
 
 .sidebar{
 	width: 100px;
-	height: 100%;
 	background: $white;
 	padding-top: 85px;
 	padding-bottom: 105px;
+
+	.nav{
+		font-size: 25px;
+	}
 }
 
 .nav{
-	font-size: 25px;
-
 	&.place-bottom{
 		bottom: 0;
 		left: 0;
@@ -155,5 +168,109 @@ a{
 			background: none;
 			box-shadow: none;
 		}
+	}
+}
+
+.content-area{
+	width: calc(100% - 100px);
+}
+
+.panel{
+	width: 350px;
+
+	.tabs{
+		height: 100%;
+
+		.tab-content{
+			height: inherit;
+		}
+
+		.tab-pane{
+			height: calc(100% - 150px);
+			margin-right: -1rem;
+		}
+
+		.holder{
+			padding-right: 1rem;
+		}
+	}
+
+	.nav-tabs{
+		font-size: 12px;
+	}
+
+	.nav-link{
+		&:focus{
+			outline: none;
+		}
+	}
+}
+
+.contact-list{
+	.avatar{
+		width: 50px;
+		height: 50px;
+
+		&.status{
+			position: relative;
+
+			&:before{
+				content: '';
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				width: 13px;
+				height: 13px;
+				border-radius: 100%;
+			}
+
+			&[status = "online"]{
+				&:before{
+					background: $green;
+				}
+			}
+
+			&[status = "away"]{
+				&:before{
+					background: $warning;
+				}
+			}
+
+			&[status = "busy"]{
+				&:before{
+					background: $danger;
+				}
+			}
+		}
+	}
+
+	.info-area{
+		position: relative;
+		width: calc(100% - 50px);
+		font-family: $font-family-sans-alternative;
+	}
+
+	.name{
+		width: 100%;
+		font-size: 18px;
+		color: $black;
+	}
+
+	.descr{
+		font-size: 14px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		color: $gray-600;
+	}
+
+	.count{
+		right: 0;
+		top: 0;
+		color: $white;
+		width: 25px;
+		height: 25px;	
+		font-size: 12px;
+		line-height: 25px;
 	}
 }

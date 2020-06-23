@@ -1,6 +1,6 @@
 <template>
 	<div class="sidebar position-relative h-100">
-		<div class="logo position-absolute w-100"><a href="#" class="d-block"><img class="d-block" src="../assets/images/voip-logo.png" alt="VOIP"></a></div>
+		<div class="logo position-absolute w-100 text-center py-3"><a href="#" class="d-inline-block"><img width="51" src="../assets/images/voip-logo-blue.png" alt="VOIP"></a></div>
 		<vuescroll :ops="ops">
 			<nav class="nav">
 				<ul class="list-unstyled text-center px-2 w-100">

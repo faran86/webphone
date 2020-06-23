@@ -3,6 +3,9 @@
 		<div class="container-fluid h-100">
 			<div class="row h-100">
 				<sidebar />
+				<div class="content-area h-100 p-4">
+					<chat-panel />
+				</div>
 			</div>
 		</div>
 	</div>
@@ -10,6 +13,7 @@
 
 <script>
 import Sidebar from './components/Sidebar.vue';
+import ChatPanel from './components/ChatPanel.vue';
 
 export default {
 	name: 'App',
@@ -19,7 +23,8 @@ export default {
 		}
 	},
 	components: {
-		Sidebar
+		Sidebar,
+		ChatPanel
 	}
 }
 
