@@ -121,12 +121,15 @@ a{
 
 .logo{
 	border-bottom: 1px solid $gray-100;
+	top: 0;
+	left: 0;
 }
 
 .sidebar{
 	width: 100px;
 	height: 100%;
 	background: $white;
+	padding-top: 85px;
 	padding-bottom: 105px;
 }
 

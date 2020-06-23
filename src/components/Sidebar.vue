@@ -1,7 +1,7 @@
 <template>
 	<div class="sidebar position-relative h-100">
-		<vuescroll>
-			<div class="logo"><a href="#" class="d-block"><img class="d-block" src="../assets/images/voip-logo.png" alt="VOIP"></a></div>
+		<div class="logo position-absolute w-100"><a href="#" class="d-block"><img class="d-block" src="../assets/images/voip-logo.png" alt="VOIP"></a></div>
+		<vuescroll :ops="ops">
 			<nav class="nav">
 				<ul class="list-unstyled text-center px-2 w-100">
 					<li class="py-3"><a href="#"><font-awesome-icon :icon="['far', 'comment']"/></a></li>
@@ -35,6 +35,15 @@ import vuescroll from 'vuescroll';
 
 export default {
 	name: 'Sidebar',
+	data() {
+		return {
+			ops: {
+				scrollPanel: {
+					scrollingX: false
+				}
+			}
+		}
+	},
 	components: {
 		vuescroll
 	}
