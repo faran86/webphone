@@ -65,15 +65,57 @@
 			<b-tab title="Teams">
 				<vuescroll :ops="ops">
 					<div class="holder">
-						
+						<strong class="d-block pt-3 pb-2 mb-2 border-bottom">Channels</strong>
+						<ul class="contact-list list-unstyled pt-3">
+							<li v-for="chatDepartment in chatDepartments" :key="chatDepartment.key" class="py-2">
+								<a href="#" class="d-flex align-items-center">
+									<span class="avatar d-block rounded-circle"><img class="w-100" :src="chatDepartment.img" alt="image description"></span>
+									<span class="info-area px-3">
+										<span class="name d-block">{{chatDepartment.name}}</span>
+										<span class="count text-center rounded-circle bg-primary overflow-hidden position-absolute" v-if="chatDepartment.unreadCount !== null">{{chatDepartment.unreadCount}}</span>
+									</span>
+								</a>
+							</li>
+						</ul>
 					</div>
 				</vuescroll>
 			</b-tab>
 			<b-tab title="Users">
-				<p>I am third tab</p>
+				<vuescroll :ops="ops">
+					<div class="holder">
+						<strong class="d-block pt-3 pb-2 mb-2 border-bottom">Users</strong>
+						<ul class="contact-list list-unstyled pt-3">
+							<li v-for="chatUser in chatUsers" :key="chatUser.key" class="py-2">
+								<a href="#" class="d-flex align-items-center">
+									<span class="avatar d-block rounded-circle status" :status="chatUser.status"><img class="w-100" :src="chatUser.img" alt="image description"></span>
+									<span class="info-area px-3">
+										<span class="name d-block">{{chatUser.name}}</span>
+										<span class="descr d-block">{{chatUser.lastMsg}}</span>
+										<span class="count text-center rounded-circle bg-primary overflow-hidden position-absolute" v-if="chatUser.unreadCount !== null">{{chatUser.unreadCount}}</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</vuescroll>
 			</b-tab>
 			<b-tab title="Channels">
-				<p>I am fourth tab</p>
+				<vuescroll :ops="ops">
+					<div class="holder">
+						<strong class="d-block pt-3 pb-2 mb-2 border-bottom">Channels</strong>
+						<ul class="contact-list list-unstyled pt-3">
+							<li v-for="chatDepartment in chatDepartments" :key="chatDepartment.key" class="py-2">
+								<a href="#" class="d-flex align-items-center">
+									<span class="avatar d-block rounded-circle"><img class="w-100" :src="chatDepartment.img" alt="image description"></span>
+									<span class="info-area px-3">
+										<span class="name d-block">{{chatDepartment.name}}</span>
+										<span class="count text-center rounded-circle bg-primary overflow-hidden position-absolute" v-if="chatDepartment.unreadCount !== null">{{chatDepartment.unreadCount}}</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</vuescroll>
 			</b-tab>
 		</b-tabs>
 	</div>
@@ -139,13 +181,25 @@ export default {
 					name: "Management Dept.",
 					unreadCount: 50,
 					favourite: false,
-					img: require('@/assets/images/user-image-3.png')
+					img: require('@/assets/images/sales-icon.png')
 				},
 				{
 					name: "HR Dept.",
 					unreadCount: 28,
 					favourite: false,
-					img: require('@/assets/images/user-image-4.png')
+					img: require('@/assets/images/vb-portal.png')
+				},
+				{
+					name: "Frontend Department",
+					unreadCount: 28,
+					favourite: false,
+					img: require('@/assets/images/sales-icon.png')
+				},
+				{
+					name: "Backend Department",
+					unreadCount: 28,
+					favourite: false,
+					img: require('@/assets/images/vb-portal.png')
 				}
 			],
 			form: {
@@ -157,6 +211,9 @@ export default {
 				},
 				scrollPanel: {
 					scrollingX: false
+				},
+				bar: {
+					background: '#7367F0'
 				}
 			}
 		}
@@ -166,18 +223,18 @@ export default {
 			let favouriteUsers = [];
 			this.chatUsers.forEach( function(element) {
 				if(element.favourite === true){
-					favouriteUsers.push(element);
+					favouriteUsers.push(element)
 				}
-			});
+			})
 			return favouriteUsers
 		},
 		favouriteDepts: function(){
 			let favouriteDepts = [];
 			this.chatDepartments.forEach( function(element) {
 				if(element.favourite === true){
-					favouriteDepts.push(element);
+					favouriteDepts.push(element)
 				}
-			});
+			})
 			return favouriteDepts
 		}
 	},

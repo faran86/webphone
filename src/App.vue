@@ -3,8 +3,10 @@
 		<div class="container-fluid h-100">
 			<div class="row h-100">
 				<sidebar />
-				<div class="content-area h-100 p-4">
-					<chat-panel />
+				<div class="content-area d-flex h-100 p-4">
+					<router-view name="chatpanel" />
+					<router-view name="welcomepanel" />
+					<router-view name="chatbox" />
 				</div>
 			</div>
 		</div>
@@ -13,18 +15,16 @@
 
 <script>
 import Sidebar from './components/Sidebar.vue';
-import ChatPanel from './components/ChatPanel.vue';
 
 export default {
 	name: 'App',
 	data() {
 		return{
-			show: true
+
 		}
 	},
 	components: {
-		Sidebar,
-		ChatPanel
+		Sidebar
 	}
 }
 
