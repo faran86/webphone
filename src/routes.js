@@ -1,20 +1,23 @@
+import Sidebar from './components/Sidebar.vue'
 import ChatPanel from './components/ChatPanel.vue'
 import WelcomePanel from './components/WelcomePanel.vue'
 import Chatbox from './components/Chatbox.vue'
 
 const routes = [
 	{
-		path: '/',
+		path: '/chat',
 		components: {
-			chatpanel: ChatPanel,
-			welcomepanel: WelcomePanel
+			sidebar: Sidebar,
+			panel: ChatPanel,
+			widepanel: WelcomePanel
 		}
 	},
 	{
-		path: '/chat',
+		path: '/chat/:id',
 		components: {
-			chatpanel: ChatPanel,
-			chatbox: Chatbox
+			sidebar: Sidebar,
+			panel: ChatPanel,
+			widepanel: Chatbox
 		}
 	}
 ];

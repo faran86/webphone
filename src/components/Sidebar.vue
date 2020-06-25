@@ -4,7 +4,7 @@
 		<vuescroll :ops="ops">
 			<nav class="nav">
 				<ul class="list-unstyled text-center px-2 w-100">
-					<li class="py-3"><a href="./chat"><font-awesome-icon :icon="['far', 'comment']"/></a></li>
+					<li class="py-3"><a href="/chat"><font-awesome-icon :icon="['far', 'comment']"/></a></li>
 					<li class="py-3"><a href="#"><b-icon icon="grid3x3-gap-fill"/></a></li>
 					<li class="py-3"><a href="#"><font-awesome-icon icon="cog"/></a></li>
 					<li class="py-3"><a href="#"><font-awesome-icon icon="wave-square"/></a></li>

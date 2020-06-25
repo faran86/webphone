@@ -1,5 +1,5 @@
 <template>
-	<div class="panel-wide d-flex align-items-center justify-content-center h-100">
+	<div class="panel-wide pl-4 d-flex align-items-center justify-content-center h-100">
 		<div class="welcome-box ml-auto mr-auto text-center w-100">
 			<h1 class="mb-5">Welcome, {{user.userName}}</h1>
 			<div class="position-relative d-inline-block">

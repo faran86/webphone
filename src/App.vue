@@ -2,11 +2,10 @@
 	<div id="app">
 		<div class="container-fluid h-100">
 			<div class="row h-100">
-				<sidebar />
+				<router-view name="sidebar" />
 				<div class="content-area d-flex h-100 p-4">
-					<router-view name="chatpanel" />
-					<router-view name="welcomepanel" />
-					<router-view name="chatbox" />
+					<router-view name="panel" />
+					<router-view name="widepanel" />
 				</div>
 			</div>
 		</div>
@@ -14,18 +13,9 @@
 </template>
 
 <script>
-import Sidebar from './components/Sidebar.vue';
 
 export default {
-	name: 'App',
-	data() {
-		return{
-
-		}
-	},
-	components: {
-		Sidebar
-	}
+	name: 'App'
 }
 
 </script>

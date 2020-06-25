@@ -99,7 +99,7 @@ $link-hover-decoration:                   none;
 // Typography
 $font-family-sans-serif: 'Montserrat' , Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
 $font-family-sans-alternative: 'Nunito', Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-$font-family-base: $font-family-sans-serif;
+$font-family-base: $font-family-sans-alternative;
 
 $h2-font-size:                22px;
 
@@ -114,6 +114,10 @@ $nav-tabs-link-hover-border-color:  $nav-tabs-border-color $nav-tabs-border-colo
 $nav-tabs-link-active-color:        $white;
 $nav-tabs-link-active-bg:           $primary;
 $nav-tabs-link-active-border-color: $nav-tabs-link-active-bg $nav-tabs-link-active-bg $nav-tabs-link-active-bg;
+
+// Forms
+$input-focus-border-color:              $gray-500;
+$input-focus-box-shadow:                none;
 
 // Transition
 $transition-duration: 0.5s;
@@ -277,11 +281,16 @@ img.fit{
 	.count{
 		right: 0;
 		top: 0;
-		color: $white;
 		width: 25px;
 		height: 25px;	
 		font-size: 12px;
 		line-height: 25px;
+	}
+
+	.date{
+		right: 0;
+		top: 0;
+		font-size: 12px;
 	}
 }
 
@@ -301,5 +310,53 @@ img.fit{
 	.ico-edit{
 		top: -10px;
 		right: 20px;
+	}
+}
+
+.chat-info{
+	.user-avatar{
+		border: 0;
+		width: 75px;
+		height: 75px;
+	}
+}
+
+.chat-box{
+	flex: 1;
+	max-height: calc(100% - 154px); 
+}
+
+.msg-box{
+	.user-avatar{
+		border: 0;
+		width: 50px;
+		height: 50px;
+	}
+
+	.msg{
+		font-size: 14px;
+	}
+}
+
+.chat-actions{
+	form{
+		flex-grow: 1;
+	}
+}
+
+.ico-chat{
+	display: inline-block;
+	vertical-align: top;
+	background: $white;
+	width: 45px;
+	height: 45px;
+	border-radius: 100%;
+	text-align: center;
+	font-size: 20px;
+	line-height: 45px;
+	color: $gray-500;
+
+	@include hover{
+		color: $gray-700;
 	}
 }
