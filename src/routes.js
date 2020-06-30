@@ -4,6 +4,7 @@ import DialPanel from './components/DialPanel.vue'
 import WelcomePanel from './components/WelcomePanel.vue'
 import Chatbox from './components/Chatbox.vue'
 import Dialpad from './components/Dialpad.vue'
+import IncomingCall from './components/IncomingCall.vue'
 
 const routes = [
 	{
@@ -36,6 +37,14 @@ const routes = [
 			sidebar: Sidebar,
 			panel: DialPanel,
 			widepanel: Dialpad
+		}
+	},
+	{
+		path: '/incoming',
+		components: {
+			sidebar: Sidebar,
+			panel: DialPanel,
+			widepanel: IncomingCall
 		}
 	}
 ];

@@ -79,10 +79,11 @@ export default {
 	methods: {
 		dial(x){
 			if(x === 'remove'){
-				console.log('yes');
 				let str = this.form.number;
 				str = str.substring(str.length - 1 , str.lenght - 1);
 				this.form.number = str;
+			} else if(x === 'dial'){
+				console.log('Dial is pressed');
 			} else{
 				this.form.number += x;
 			}
