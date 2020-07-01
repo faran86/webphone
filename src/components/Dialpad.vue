@@ -34,7 +34,8 @@
 				<button class="btn-key d-block rounded-circle border-0 mb-3" @click="dial('*')">*</button>
 				<button class="btn-key d-block rounded-circle border-0 mb-3" @click="dial('0')">0</button>
 				<button class="btn-key d-block rounded-circle border-0 mb-3" @click="dial('#')">#</button>
-				<button class="btn-key d-block rounded-circle border-0 mb-3 bg-success" @click="dial('dial')"><font-awesome-icon icon="phone-alt" /></button>
+				<button class="btn-key d-block rounded-circle border-0 mb-3 bg-success text-white" @click="dial('dial')"><font-awesome-icon icon="phone-alt" /></button>
+				<button v-if="incall" class="btn-key d-block rounded-circle border-0 mb-3 bg-warning text-white" @click="attend"><font-awesome-icon icon="undo-alt" /></button>
 				<button class="btn-key d-block rounded-circle border-0 mb-3" @click="dial('remove')"><font-awesome-icon icon="backspace" /></button>
 			</div>
 		</div>
@@ -42,7 +43,6 @@
 </template>
 
 <script>
-
 export default {
 	name: 'Chatbox',
 	data() {
@@ -73,7 +73,8 @@ export default {
 				bar: {
 					background: '#7367F0'
 				}
-			}
+			},
+			incall: this.$route.query.incall
 		}
 	},
 	methods: {
@@ -87,6 +88,10 @@ export default {
 			} else{
 				this.form.number += x;
 			}
+		},
+
+		attend: function(){
+			this.$router.push('incall');
 		}
 	}
 }

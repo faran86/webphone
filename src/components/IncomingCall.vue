@@ -8,8 +8,8 @@
 				<div class="col-6">
 					<ul class="list-unstyled mb-0 text-right">
 						<li class="d-inline-block px-1"><a href="#" class="ico-chat"><font-awesome-icon icon="volume-up" /></a></li>
-						<li class="d-inline-block px-1"><a href="#" class="ico-chat bg-success text-white"><font-awesome-icon icon="phone-alt" /></a></li>
-						<li class="d-inline-block px-1"><a href="#" class="ico-chat bg-danger text-white"><font-awesome-icon icon="phone-slash" /></a></li>
+						<li class="d-inline-block px-1"><b-button @click="attend" class="ico-chat p-0 bg-success text-white"><font-awesome-icon icon="phone-alt" /></b-button></li>
+						<li class="d-inline-block px-1"><b-button @click="decline" class="ico-chat border border-danger p-0 bg-danger text-white"><font-awesome-icon icon="phone-slash" /></b-button></li>
 					</ul>
 				</div>
 			</div>
@@ -38,14 +38,14 @@
 									<div class="btns-wrap d-flex flex-shrink-0">
 										<ul class="list-unstyled mb-0 text-right">
 											<li class="d-inline-block px-1">
-												<a href="#" class="ico-chat bg-success text-white">
+												<b-button @click="attend" class="ico-chat p-0 bg-success text-white">
 													<font-awesome-icon icon="phone-alt" />
-												</a>
+												</b-button>
 											</li>
 											<li class="d-inline-block px-1">
-												<a href="#" class="ico-chat bg-danger text-white">
+												<b-button @click="decline" class="ico-chat p-0 border border-danger bg-danger text-white">
 													<font-awesome-icon icon="phone-slash" />
-												</a>
+												</b-button>
 											</li>
 										</ul>
 									</div>
@@ -65,7 +65,9 @@
 <script>
 
 export default {
-	name: 'Chatbox',
+	name: 'IncomingCall',
+	props: ['incomingNumber'],
+	
 	data() {
 		return {
 			callDetail: {
@@ -88,6 +90,16 @@ export default {
 					background: '#7367F0'
 				}
 			}
+		}
+	},
+
+	methods: {
+		attend: function(){
+			this.$router.push('incall');
+		},
+
+		decline: function(){
+			this.$router.push('dialer');
 		}
 	}
 }
